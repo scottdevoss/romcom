@@ -2,6 +2,7 @@
 var randomBtn = document.querySelector('.random-cover-button');
 var makeNewBtn = document.querySelector('.make-new-button');
 var saveBtn = document.querySelector('.save-cover-button');
+var viewSavedBtn = document.querySelector('.view-saved-button');
 var homeImg = document.querySelector('.cover-image');
 var homeTitle = document.querySelector('.cover-title');
 var homeDesc1 = document.querySelector('.tagline-1');
@@ -20,6 +21,9 @@ var savedCovers = [
 // Add your event listeners here 👇
 randomBtn.addEventListener('click', createRandomCover);
 makeNewBtn.addEventListener('click', makeNewCover); 
+viewSavedBtn.addEventListener('click', viewSavedCovers); 
+homeBtn.addEventListener('click', home);
+
 
 // Create your event handlers and other functions here 👇
 
@@ -66,4 +70,21 @@ function makeNewCover() {
   show(homeBtn);
   hide(saveBtn);
   hide(randomBtn);
+}
+
+function viewSavedCovers() {
+  show(savedView);
+  show(homeBtn);
+  hide(homeView);
+  hide(saveBtn);
+  hide(randomBtn);
+  hide(formView);
+}
+
+function home() {
+  hide(homeBtn);
+  show(homeView);
+  show(randomBtn);
+  show(saveBtn);
+  hide(formView);
 }
